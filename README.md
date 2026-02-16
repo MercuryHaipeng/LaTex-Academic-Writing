@@ -1,1 +1,1 @@
-All the contents are from <LaTex Thesis Writing Tutorial>.
+All the contents are from the book of "LaTex Thesis Writing Tutorial".
