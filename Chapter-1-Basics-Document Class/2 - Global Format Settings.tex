@@ -29,8 +29,8 @@
 
 % \documentclass{article}
 % \usepackage{sectsty}
-% \sectionfont{\fontfamily{phv} \fontseries{b}\fontsize{11pt}{20pt}\selectfont} % 一级标题字体格式设置
-% \subsectionfont{\fontfamily{phv}\fontseries{b}\fontsize{11pt}{20pt}\selectfont} % 二级标题字体格式设置
+% \sectionfont{\fontfamily{phv} \fontseries{b}\fontsize{14pt}{20pt}\selectfont} % 一级标题字体格式设置
+% \subsectionfont{\fontfamily{phv}\fontseries{b}\fontsize{12pt}{20pt}\selectfont} % 二级标题字体格式设置
 % \subsubsectionfont{\fontfamily{phv}\fontseries{b}\fontsize{11pt}{20pt}\selectfont} % 三级标题字体格式设置
 % % 字体族设置为 pvm（Palatino 字体的无衬线变体）
 % % 字重（粗细）设置为 b = bold（粗体）
@@ -38,7 +38,7 @@
 
 % \title{LaTex cook-book}
 % \author{author}
-% \date{\today}   % \date{2026/02/16}
+% \date{2026/02/16}  % \date{\today} 
 
 % \begin{document}
 % \maketitle
@@ -56,10 +56,10 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% 生成目录
-% \setcounter{tocdepth}{0} % 目录层次仅包括\part
-% \setcounter{tocdepth}{1} % 目录层次深入到\section
-% \setcounter{tocdepth}{2} % 目录层次深入到\subsection
-% \setcounter{tocdepth}{3} % 目录层次深入到\subsubsection
+%% \setcounter{tocdepth}{0} % 目录层次仅包括\part
+%% \setcounter{tocdepth}{1} % 目录层次深入到\section
+%% \setcounter{tocdepth}{2} % 目录层次深入到\subsection
+%% \setcounter{tocdepth}{3} % 目录层次深入到\subsubsection
 
 \documentclass[12pt]{article}
 \begin{document}
@@ -83,7 +83,7 @@ The text of 2.2
 \subsection{2.3}
 The text of 2.3
 
-\section*{Section 3}
+\section*{Section 3} % 不会生成编号，也不会出现在目录中
 \end{document}
 
 
