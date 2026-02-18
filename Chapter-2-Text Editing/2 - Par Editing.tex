@@ -1,0 +1,52 @@
+% \documentclass[12pt]{article}
+
+% \setlength{\parindent}{2em}
+% \usepackage{indentfirst} % 章节后第一段首行缩进
+
+% \begin{document}
+% In \LaTeX, We can use the setlength command to adjust the indentation distance of the first line. In this case, we set the indentation distance as 2em.
+
+% \section{Induction}
+% In \LaTeX, We can use the setlength command to adjust the indentation distance of the first line. In this case, we set the indentation distance as 2em.
+
+% In \LaTeX, We can use the setlength command to adjust the indentation distance of the first line. In this case, we set the indentation distance as 2em.
+
+% \end{document}
+
+%% ========================================================== %%
+% %%  ctexart 类型不需要宏包实现章节首段缩进 
+% \documentclass[12pt]{ctexart}
+% % \setlength{\parindent}{0em} % 中文文档默认首行缩进
+% \begin{document}
+% 在 \LaTeX 中，我们可以利用"setlength"命令设置段落首行缩进。默认情况下，我们设置缩进值为2字符。
+
+% \noindent 在 \LaTeX 中，我们可以利用"noindent"命令暂时取消段落首行缩进。
+
+% \section{Induction}
+% 在 \LaTeX 中，我们可以利用"setlength"命令设置段落首行缩进。默认情况下，我们设置缩进值为2字符。
+
+% \end{document}
+
+%% ========================================================== %%
+\documentclass[12pt]{article}
+\begin{document}
+\fbox{
+    \parbox{0.9\linewidth}{     % 设置文本框宽度，否则内容不会换行
+        In \LaTeX, We can use the setlength command to adjust the indentation distance of the first line. In this case, we set the indentation distance as 2em.
+    }
+}
+
+%% 段落对齐方式调整
+\begin{center} % 居中对齐
+This is latex-cookbook.
+\end{center}
+
+\begin{flushleft} % 左对齐
+This is latex-cookbook.
+\end{flushleft}
+
+\begin{flushright} % 右对齐
+This is latex-cookbook.
+\end{flushright}
+
+\end{document}

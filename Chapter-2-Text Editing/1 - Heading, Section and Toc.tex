@@ -1,26 +1,54 @@
 \documentclass[fontsize=12pt]{article}
 
-% \usepackage{titlesec}
-% \titleformat{\subsection}{\Large\sectionef}
+\usepackage{titlesec}   % 只改标题字体，保持编号和间距默认
+\titleformat*{\section}{\Large\bfseries}
+\titleformat*{\subsection}{\large\bfseries}
+\titleformat*{\subsubsection}{\normalsize\itshape}   
+
+\usepackage{sectsty}
+\sectionfont{\centering} % 标题居中
+
+\usepackage[colorlinks=false, hidelinks]{hyperref}  % 为文档中的章节引用自动添加链接
 
 \begin{document}
 
-\title{My title}    % 设置文档标题
-\author{A, B and C} % 设置作者
-\date{February 16, 2026}  % 设置日期
+\title{My title}            % 设置文档标题
+\author{A, B and C}         % 设置作者
+\date{February 16, 2026}    % 设置日期
 \maketitle
 
 \begin{abstract}
-This is the abstract.    
+This is the abstract. This is the abstract. This is the abstract. This is the abstract. This is the abstract. This is the abstract. This is the abstract. This is the abstract. This is the abstract. This is the abstract.    
 \end{abstract}
 \textbf{Keywords: keyword1, keyword2, keyword3} % 设置关键词
 
-\section*{Text Editing}
-\subsection{Text}
+\newpage
+% \setcounter{tocdepth}{1} % 设置目录层次：0-part/chapter, 1-section, ...
+\tableofcontents % 创建章节目录
+\newpage
+
+\addtocontents{toc}{\setcounter{tocdepth}{1}} % "First Section"目录层次深度为1
+\section[FS]{First Section} % 中括号为目录中设置的缩写(别名)
+% \section{First Section}
+\subsection{Subsection title 1}
 Hello, LaTex!   % 文档内容
+\subsection{Subsection title 2}
+\subsection{Subsection title 3}
 
-\subsection{List}
+\addtocontents{toc}{\setcounter{tocdepth}{2}} % "Second Section"目录层次深度为2, 下文相同
+\section[SS]{Second Section}
+% \section{Second Section}
+\subsection{Subsection title 4}
+Hello, LaTex!   
+\subsection{Subsection title 5}
+\subsection{Subsection title 6}
 
-\subsection{Section}
+\section[TS]{Third Section}
+% \section{Third Section}
+\subsection{Subsection title 7}
+Hello, LaTex!   
+\subsection{Subsection title 8}
+\subsection{Subsection title 9}
+
 
 \end{document}
