@@ -1,0 +1,140 @@
+\documentclass[12pt]{article}
+\usepackage{parskip}  % 取消缩进，增加段间距
+
+\usepackage{amsmath}    % 数学公式排版
+\usepackage{amssymb}    % 数学符号扩展 
+\usepackage{amsfonts}   % 数学专用字体
+
+\begin{document}
+%% 行内公式和行间公式
+$ x+y=2 $ is a simple quadratic equation.
+$$ x+y=2 $$
+
+%% ================================================== %%
+%% equation 环境
+% 自动带有编号的公式
+\begin{equation}\label{eq1}
+    x+y=2
+\end{equation}
+Equation~\eqref{eq1} shows a simple formula.
+
+% 移除公式编号
+\begin{equation*}\label{eq2}
+    x+y=2
+\end{equation*}
+
+\newpage
+%% ================================================== %%
+%% align 环境
+\begin{align}
+    x+y=2 \\
+    2x+y=3
+\end{align}
+
+\begin{align*}
+    2x+1&=7 & 3y-2&=-5 & -5z+8&=-2 \\
+    2x&=6 & 3y&=-3 & -5z&=-10 \\
+    x&=3 & y&=-1 & z&=2
+\end{align*}
+
+\begin{align}
+    2x+1&=7 & 3y-2&=-5 & -5z+8&=-2 \nonumber \\ % 某一行不编号
+    2x&=6 & 3y&=-3 & -5z&=-10 \\
+    x&=3 & y&=-1 & z&=2 
+\end{align}
+
+% 多行公式共用同一个编号
+\begin{equation}
+    \begin{aligned}
+        2x+1&=7 & 3y-2&=-5 & -5z+8&=-2 \\
+        2x&=6 & 3y&=-3 & -5z&=-10 \\
+        x&=3 & y&=-1 & z&=2
+    \end{aligned}
+\end{equation}
+
+% 自动居左对齐公式环境
+\begin{flalign}
+    &x+y=2 & \\
+    &2x+y=3
+\end{flalign}
+
+\newpage
+%% ================================================== %%
+%% gather 环境
+\begin{gather}
+    x+y=2 \\
+    2x+y=3
+\end{gather}
+
+\begin{gather*}
+    x+y=2 \\
+    2x+y=3
+\end{gather*}
+
+\newpage
+%% ================================================== %%
+%% 字符类型
+$ \boldsymbol{X, Y, Z, x, y, z} $ \\    % 数学粗斜体
+$ \mathrm{X, Y, Z, x, y, z} $ \\        % 罗马体(正体/直立体)
+$ \mathit{X, Y, Z, x, y, z} $ \\        % 数学斜体
+$ \mathbf{X, Y, Z, x, y, z} $ \\        % 粗罗马体
+$ \mathsf{X, Y, Z, x, y, z} $ \\        % 无衬线体
+$ \mathtt{X, Y, Z, x, y, z} $ \\        % 等宽字体(打字机字体)
+$ \mathcal{X, Y, Z} $ \\                % 花体(手写书法体)大写字母
+$ \mathbb{X, Y, Z} $ \\                 % 黑板体(空心粗体) 大写字母
+$ \mathfrak{X, Y, Z, x, y, z} $ \\      % 哥特体/德文体
+
+\boldmath   % 加粗特定公式
+\begin{equation}
+    x^{2} + y^{2} - \sin z = 4
+\end{equation}
+\unboldmath
+
+%% 调整公式大小
+$ \displaystyle{f(x)=\sum_{i=1}^{n}\frac{1}{x_{i}}} $, \\
+$ \textstyle{f(x)=\sum_{i=1}^{n}\frac{1}{x_{i}}} $, \\
+$ \scriptstyle{f(x)=\sum_{i=1}^{n}\frac{1}{x_{i}}} $, \\
+$ \scriptscriptstyle{f(x)=\sum_{i=1}^{n}\frac{1}{x_{i}}} $. 
+
+% 限定字符区域调整公式大小
+\begingroup
+\small
+\begin{align}
+    x+y=2 \\
+    2x+y=3
+\end{align}
+\endgroup
+
+\begingroup
+\Large
+\begin{align}
+    x+y=2 \\
+    2x+y=3
+\end{align}
+\endgroup
+
+\newpage
+%% ================================================== %%
+%% array 环境: l(左对齐), c(居中对齐), r(右对齐)
+\begin{equation}
+    \left\{\begin{array}{l} % 左侧显示大括号，右侧占位但不显示符号
+        x+y=2 \\
+        2x+y=3
+    \end{array}\right.
+\end{equation}
+
+\begin{align}
+    \left\{\begin{array}{r}
+        x+y=2 \\
+        2x+y=3
+    \end{array}\right.
+\end{align}
+
+\begin{equation}
+    \begin{array}{c@{\qquad}c}  % 超大间距的两列居中数组
+        A = B + C \qquad \Rightarrow & D = E - F, \\ \\
+        G = H \qquad \Rightarrow & K = P + Q + M.
+    \end{array}
+\end{equation}
+
+\end{document}

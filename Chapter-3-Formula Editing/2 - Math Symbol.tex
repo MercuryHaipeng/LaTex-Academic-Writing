@@ -1,0 +1,111 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{bbold}  % \mathbb默认只支持大写字母, 空心数字需要引入额外宏包
+
+\begin{document}
+%% 运算符号
+$$ 3 + 5 $$
+$$ 3 - 5 $$
+$$ 3 \times 5 $$
+$$ 3 \cdot 5 $$
+$$ 3 \div 5 $$
+$$ 3 / 5 $$
+$$ 3 \pm 5 $$
+$$ 3 \mp 5 $$
+
+$$ x < y $$
+$$ x > y $$
+$$ x \leq y $$
+$$ x \geq y $$
+$$ x \ll y $$
+$$ x \gg y $$
+
+$$ a \cap b $$      % 交集
+$$ a \cup b $$      % 并集
+$$ a \supset b $$   % b 是 a 的子集
+$$ a \subset b $$   % a 是 b 的子集
+$$ a \supseteq b $$ % b 是 a 的子集(包含等于)
+$$ a \subsetneq b $$ % a 是 b 的真子集
+$$ a \supsetneq b $$ % b 是 a 的真子集	
+$$ a \in b $$
+$$ a \notin b $$
+
+\newpage
+%% 标记符号
+$$ \frac{x+3}{y+5} $$
+$$ \dfrac{x+3}{y+5} $$  % 和行间公式大小一致
+$$ \tfrac{x+3}{y+5} $$  % 和行内文字大小一致
+
+$$ x^{x+5} $$
+$$ x_{x+5} $$
+$$ x_{1}, x_{2}, \ldots, x_{n} $$
+
+$$ \hat{x} $$
+$$ \bar{xy}, \overline{xy}$$
+$$ \tilde{x}, \widetilde{xy} $$
+$$ \vec{x} $$
+$$ \dot{x} $$
+
+$$ \sqrt{3} $$
+$$ \sqrt[3]{5} $$
+$$ \sqrt{1+\sqrt{x}} $$
+$$ \frac{\sqrt{x+3}}{\sqrt{y+5}} $$
+
+\newpage
+%% 广义括号
+$$ x \left( \frac{1}{y}+1 \right) $$
+$$ x \left[ \frac{1}{y}+1 \right] $$
+$$ x \left\{ \frac{1}{y}+1 \right\} $$
+$$ x \left| \frac{1}{y}+1 \right| $$
+$$ x \left\| \frac{1}{y}+1 \right\| $$
+$$ \left< \frac{1}{x}, \frac{1}{y+1} \right> $$
+$$ \langle \frac{1}{x}, \frac{1}{y+1} \rangle $$
+$$ \left. \frac{dy}{dx} \right|_{x=1} $$
+
+% 切分多行公式
+\begin{equation}
+    \begin{aligned}
+        \Bigl(a+\frac{b}{2}+\frac{c}{3}+\frac{d}{4}+\frac{e}{5}+\frac{f}{6}+\frac{g}{7}+\frac{h}{8} \\
+        +\frac{i}{9}+\frac{j}{10}+\frac{k}{11}+\frac{l}{12}+\frac{m}{13}+\frac{n}{14}+\cdots\Bigr)
+    \end{aligned}
+\end{equation}
+
+% 控制括号大小
+\begin{equation}
+    \left( x+y=z \right)
+    \bigl( x+y=z \bigr)
+    \Bigl( x+y=z \Bigr)
+    \biggl( x+y=z \biggr)
+    \Biggl( x+y=z \Biggr)
+\end{equation}
+
+\newpage
+%% 特殊符号
+\[ X \in \mathbb{R}^{m \times n} \]
+\[ \mathbb{1}, \mathbb{2}, \mathbb{3}, \mathbb{4}, \mathbb{5} \]
+
+\[ y = \log_{2}x \]
+\[y = \ln x \]
+\[ \sum_{i=1}^{n}x_{i} \]
+\[ \prod_{i=1}^{n}x_{i} \]
+
+\[ y=\sin x \]
+\[ y=\arcsin x \]
+\[ y=\cos x \]
+\[ y=\arccos x \]
+\[ y=\tan x \]
+\[ y=\arctan x \]
+
+\newpage
+%% 希腊字母
+\[ S = \pi ab \]
+\[ a^{\alpha}b^{\beta} \cdots k^{\kappa}l^{\lambda} \leq a\alpha+b\beta+\cdots+k\kappa+l\lambda \]
+\[ \phi \left(\frac{x_{l}+x_{2}+\cdots+x_{n}}{n}\right) \leq \frac{\phi\left(x_{1}\right)+\phi\left(x_{2}\right)+\cdots+\phi\left(x_{n}\right)}{n} \]
+
+\[ \Delta x + \Delta y \]
+\[ (i, j, k) \in \Omega \]
+
+
+\end{document}
