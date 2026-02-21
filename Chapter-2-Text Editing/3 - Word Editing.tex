@@ -1,20 +1,97 @@
-%% 字体样式调整
+% %% 调整字体样式和大小
+% \documentclass[12pt]{article}
+
+% \usepackage{parskip}  % 自动取消缩进，增加段间距
+% % \usepackage{indentfirst} % 章节后第一段首行缩进
+
+% \begin{document}
+% %% 字体样式调整
+% Produce \textit{italicized} text. \\   % 生成斜体文字
+% Produce \textbf{bold face} text. \\  % 生成粗体文字
+% Produce \texttt{typewriter font} text. \\  % 生成打字机字体文字
+% Produce \textsc{small caps} text. \\ % 生成小型大写字母文字
+
+% \vspace{1em}
+% %% 英文字母全部改为大写
+% \uppercase{Use uppercase command to force all uppercase.} \\
+% \MakeUppercase{Use MakeUppercase command to force all uppercase.}
+
+% \newpage
+
+% %% 调整字体大小
+% Produce {\tiny tiny word} \\
+% Produce {\scriptsize script size word} \\
+% Produce {\footnotesize footnote size word} \\
+% Produce {\normalsize normal size word} \\
+% Produce {\large large word} \\
+% Produce {\Large Large word} \\
+% Produce {\LARGE LARGE word} \\
+% Produce {\huge huge word} \\
+% Produce {\Huge Huge word} \\
+
+% \vspace{1em}
+% % 也可以用环境来控制字体
+% Produce \begin{large} large word \end{large} \\
+% Produce \begin{Large} Large word \end{Large} \\
+% Produce \begin{LARGE} large word \end{LARGE} \\
+
+% \end{document}
+
+%% ======================================== %%
+%% 字体颜色，下划线和删除线
+% \documentclass[12pt]{article}
+
+% \usepackage{parskip}  % 自动取消缩进，增加段间距
+
+% \usepackage{color}
+% \definecolor{kugreen}{RGB}{50, 93, 61}
+% \definecolor{kugreenlys}{RGB}{132, 158, 139}
+% \definecolor{kugreenlyslys}{RGB}{173, 190, 177}
+% \definecolor{kugreenlyslyslys}{RGB}{214, 233, 216}
+
+% \usepackage[T1]{fontenc}
+% \usepackage{palatino}   % palatino 宏包提供了 Palatino 字体
+
+% \usepackage{ulem}   % 设置下划线
+% \usepackage{soul}   % 设置删除线
+
+% \begin{document}
+% % 字体颜色设置
+% This is a simple example for using \LaTeX. \\
+% {\color{kugreen}This is a simple example for using \LaTeX.} \\
+% {\color{kugreenlys}This is a simple example for using \LaTeX.} \\
+% {\color{kugreenlyslys}This is a simple example for using \LaTeX.} \\
+% {\color{kugreenlyslyslys}This is a simple example for using \LaTeX.} \\
+
+% \newpage
+
+% % 下划线与删除线
+% Generate \underline{underlined} text. \\    % 生成带下划线的文本
+% Generate \uline{underlined} text. \\    % 生成单下划线的文本
+% Generate \uuline{double underlined} text. \\    % 生成双下划线的文本
+% Generate \uwave{wavy underlined} text. \\   % 生成波浪线的文本
+
+% This is text\_with\_underscores.    % 文本下标绘制下划线
+
+% Generate \st{many strikethrough} text. \\   % 生成带删除线的文本
+
+
+% \end{document}
+
+%% ======================================== %%
+%% 特殊字符
 \documentclass[12pt]{article}
+\usepackage{pifont}
 \begin{document}
-Produce \textit{italicized} text.   % 生成斜体文字
+How to write a number in a article?
 
-Produce \textbf{bold face} text.   % 生成粗体文字
+Type 1: \ding{172}-\ding{173}-\ding{174}-\ding{175}-\ding{176}-\ding{177}-\ding{178}-\ding{179}-\ding{180}-\ding{181}
 
-Produce \texttt{typewriter font} text.   % 生成打字机字体文字
+Type 2: \ding{182}-\ding{183}-\ding{184}-\ding{185}-\ding{186}-\ding{187}-\ding{188}-\ding{189}-\ding{190}-\ding{191}
 
-Produce \textsc{small caps} text.   % 生成小型大写字母文字
+Type 3: \ding{192}-\ding{193}-\ding{194}-\ding{195}-\ding{196}-\ding{197}-\ding{198}-\ding{199}-\ding{200}-\ding{201}
 
-% 英文字母全部改为大写
-\uppercase{Use uppercase command to force all uppercase.} 
-
-\MakeUppercase{Use MakeUppercase command to force all uppercase.}
+Type 4: \ding{202}-\ding{203}-\ding{204}-\ding{205}-\ding{206}-\ding{207}-\ding{208}-\ding{209}-\ding{210}-\ding{211}
 
 \end{document}
 
-%% ============================================================= %%
-%% 调整字体大小

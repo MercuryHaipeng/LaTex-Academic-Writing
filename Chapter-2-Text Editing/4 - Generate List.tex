@@ -1,0 +1,87 @@
+%% 1. 无序列表
+\documentclass[12pt]{article}
+
+% \usepackage{amssymb} % 引入数学宏包
+% \renewcommand\labelitemi{$\blacksquare$} % 条目符号设置为黑色方块
+% \renewcommand\labelitemii{$\square$} % 条目符号设置为空心方块
+
+\usepackage{enumitem} % 调整列表上下左右的缩进间距
+
+\begin{document}
+% % 一般无序列表
+% \begin{itemize}
+%     \item Python    % 起始符号为圆点
+%     \item LaTeX     % 起始符号为圆点
+%     \item[*] GitHub % 起始符号为星号
+% \end{itemize}
+
+% 二级列表：方块嵌套展示
+\begin{itemize}
+    \item Languages
+        \begin{itemize}
+            \item Python
+            \item Java
+        \end{itemize}
+    \item Tools
+        \begin{itemize}
+            \item LaTeX
+            \item GitHub
+        \end{itemize}
+\end{itemize}
+
+\newpage
+%% ========================================================= %%
+%% 2. 有序列表
+\begin{enumerate}
+    \item pencil
+    \item calculator
+    \item ruler
+    \item notebook
+    \begin{enumerate}
+        \item notes
+        \begin{enumerate}
+            \item note A
+            \begin{enumerate}
+                \item note a
+            \end{enumerate}
+            \item note B
+        \end{enumerate}
+        \item homework
+        \item assessments
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+%% ========================================================= %%
+%% 3. 阐述性列表
+\begin{description}
+    \item[CNN] Convolutional Neural Networks
+    \item[RNN] Recurrent Neural Network
+    \item[CRNN] Convolutional Recurrent Neural Network   
+\end{description}
+
+\newpage
+%% ========================================================= %%
+%% 4. 自定义列表格式
+%% topsep: 列表环境与上下文的距离  parsep: 条目内段落之间的距离
+%% itemsep: 条目之间的距离  partopsep: 条目与下面段落的距离
+%% leftmargin: 列表环境左边的空白长度  rightmargin: 列表环境右边的空白长度
+%% labelsep: 标号与列表环境左侧的距离  itemindent: 条目的缩进距离
+%% labelwidth: 调整标号的宽度  listparindent: 条目下面段落的缩进距离
+Default spacing:
+\begin{itemize}
+    \item Python
+    \item LaTeX  
+    \item GitHub
+\end{itemize}
+
+Custom Spacing:
+\begin{itemize}[itemsep=15pt, topsep=20pt, itemindent=20pt, labelsep=20pt]
+    \item Python
+    \item LaTeX  
+    \item GitHub
+\end{itemize}
+
+
+
+\end{document}

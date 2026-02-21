@@ -1,0 +1,38 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{\bfseries latex-cookbook} % 页眉内容
+\lfoot{From: Tom} % 左侧页脚内容
+\cfoot{To: Jerry} % 居中页脚内容
+\rfoot{\thepage} % 右侧页脚给出页码
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\begin{document}
+This is latex-cookbook!
+
+\newpage
+%% 临时不需要页眉页脚
+\thispagestyle{empty}
+This is latex-cookbook!
+
+\newpage
+%% 添加脚注
+Tom\footnote{Tom is a PhD from the University of Montreal.} and Jerry\footnote{Jerry is a PhD from the Central South University.} are the two authors of latex-cookbook.
+
+% 给表格添加脚注(table环境中，\footnote命令不起作用)
+\begin{center}
+    \begin{minipage}{.5\textwidth}
+        \begin{tabular}{l|l}
+            \textsc{Chapter} & \textsc{Author} \\ \hline
+            \textit{Introduction} & Tom\footnote{Tom is a PhD from the University of Montreal.} \\
+            \textit{Methods} & Jerry\footnote{Jerry is a PhD from the Central South University.} \\
+            \textit{Case Study} & Tom \\
+            \textit{Conclusion} & Jerry          
+        \end{tabular}        
+    \end{minipage}
+\end{center}
+
+\end{document}
