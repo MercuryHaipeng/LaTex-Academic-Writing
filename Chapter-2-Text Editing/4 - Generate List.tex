@@ -8,12 +8,12 @@
 \usepackage{enumitem} % 调整列表上下左右的缩进间距
 
 \begin{document}
-% % 一般无序列表
-% \begin{itemize}
-%     \item Python    % 起始符号为圆点
-%     \item LaTeX     % 起始符号为圆点
-%     \item[*] GitHub % 起始符号为星号
-% \end{itemize}
+% 一般无序列表
+\begin{itemize}
+    \item Python    % 起始符号为圆点
+    \item LaTeX     % 起始符号为圆点
+    \item[*] GitHub % 起始符号为星号
+\end{itemize}
 
 % 二级列表：方块嵌套展示
 \begin{itemize}
@@ -43,6 +43,7 @@
             \item note A
             \begin{enumerate}
                 \item note a
+                \item note b
             \end{enumerate}
             \item note B
         \end{enumerate}
@@ -76,7 +77,7 @@ Default spacing:
 \end{itemize}
 
 Custom Spacing:
-\begin{itemize}[itemsep=15pt, topsep=20pt, itemindent=20pt, labelsep=20pt]
+\begin{itemize}[itemsep=15pt, topsep=20pt, itemindent=20pt, labelsep=30pt]
     \item Python
     \item LaTeX  
     \item GitHub
