@@ -1,4 +1,12 @@
 \documentclass[12pt]{article}
+
+\usepackage{booktabs}
+\usepackage{threeparttable} 
+\usepackage{diagbox} 
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{tabulary}
+
 \begin{document}
 
 %% table 环境为创建的表格自动递增编号，并建立表格标题和索引标签
@@ -19,5 +27,111 @@ Table~\ref{table1} shows the example of ABCD.
     \label{table1}
 \end{table}
 
+%% 使用\fontsize调制表格内字体的大小 \usepackage{booktabs}
+\begin{table}
+    \fontsize{0.5cm}{0.8cm}\selectfont
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Column1 & Column2 & Column3 & Column4 \\ \hline
+        A1 & A2 & A3 & A4 \\ \hline
+        B1 & B2 & B3 & B4 \\ \hline
+        C1 & C2 & C3 & C4 \\ \hline
+        D1 & D2 & D3 & D4 \\ \hline    
+    \end{tabular}
+\end{table}
+
+\newpage
+%% 插入表格注释 \usepackage{threeparttable}
+\begin{table}
+    \centering
+    \begin{threeparttable}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Column1\tnote{*} & Column2 & Column3 & Column4 \\ \hline
+        A1$^{2}$ & A2 & A3 & A4 \\ \hline
+        B1$^{3}$ & B2 & B3 & B4 \\ \hline
+        C1 & C2 & C3 & C4 \\ \hline
+    \end{tabular}
+    \begin{tablenotes}
+        \footnotesize
+        \item[1] This is a remark example.
+        \item[2] This is another remark example and with a very long content, but the contents will be wrapped.
+        \item[*] This is 1.
+    \end{tablenotes}
+    \end{threeparttable}
+\end{table}
+
+%% 插入各类斜线 \usepackage{diagbox}
+\begin{table}[htbp]
+    \centering
+    \caption{Example of ABC}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \diagbox[width=5em]{$A$}{$B$} & Column2 & Column3 & Column4 \\ \hline
+        A1 & A2 & A3 & A4 \\ \hline
+        B1 & B2 & B3 & B4 \\ \hline
+        C1 & C2 & C3 & C4 \\ \hline
+        D1 & D2 & D3 & D4 \\ \hline    
+    \end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Example of ABC}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \diagbox[width=5em]{$A$}{$B$}{$C$} & Column2 & Column3 & Column4 \\ \hline
+        A1 & A2 & A3 & A4 \\ \hline
+        B1 & B2 & B3 & B4 \\ \hline
+        C1 & C2 & C3 & C4 \\ \hline
+        D1 & D2 & D3 & D4 \\ \hline    
+    \end{tabular}
+\end{table}
+
+\newpage
+%% ================================================ %%
+%% 文本对齐和自动换行 \usepackage{array}
+% p{列宽}：顶部基线对齐  m{列宽}：纵向居中基线对齐  b{列宽}：底部基线对齐
+% >{\raggedright\arraybackslash}: 一列单元格内容设置为左对齐  
+% >{\centering\arraybackslash}: 一列单元格内容设置为横向居中对齐
+% >{\raggedleft\arraybackslash}: 一列单元格内容设置为右对齐
+\begin{table}[htbp]
+    \centering
+    \caption{Title of a table}
+    \label{first label}
+    \begin{tabular}{|>{\raggedright\arraybackslash}m{2.3cm}|>{\centering\arraybackslash}p{2.3cm}|>{\centering}b{2.3cm}|>{\raggedleft\arraybackslash}m{2.3cm}|}
+        \hline
+        Column1 & Column2 Column2 & Column3 Column3 Column3 & Column4 Column4 Column4 Column4 \\ \hline
+        Value1 & Value2 Value2 & Value3 Value3 Value3 & Value4 Value4 Value4 Value4 \\ \hline
+        Value1 & Value2 Value2 & Value3 Value3 Value3 & Value4 Value4 Value4 Value4 \\ \hline
+    \end{tabular}
+\end{table}
+
+%% tabularx环境中，将需要自动换行的列类型参数设为X
+\begin{table}[htbp]
+    \centering
+    \caption{Title of a table}
+    \label{second label}
+    \begin{tabularx}{\linewidth}{|>{\raggedleft\arraybackslash}X|X|X|>{\centering\arraybackslash}X|} 
+        \hline
+        Column1 & Column2 & Column3 & Column4 \\ \hline
+        Value1 & Value2 Value2 & Value3 Value3 Value3 & Value4 Value4 Value4 Value4 \\ \hline
+        This is Value1. This is Value1. & This is Value2. This is Value2. & This is Value3. This is Value3. &This is Value4. This is Value4. \\ \hline
+    \end{tabularx}
+\end{table}
+
+%% tabulary环境自动换行，L(左对齐), C(居中对齐), R(右对齐)
+\begin{table}[htbp]
+    \centering
+    \caption{Title of a table}
+    \label{third label}
+    \begin{tabulary}{\linewidth}{|L|C|C|R|} 
+        \hline
+        Column1 & Column2 & Column3 & Column4 \\ \hline
+        Value1 & Value2 Value2 & Value3 Value3 Value3 & Value4 Value4 Value4 Value4 \\ \hline
+        This is Value1. This is Value1. & This is Value2. This is Value2. & This is Value3. This is Value3. &This is Value4. This is Value4. \\ \hline
+    \end{tabulary}
+\end{table}
 
 \end{document}

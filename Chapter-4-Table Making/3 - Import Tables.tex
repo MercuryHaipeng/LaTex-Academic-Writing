@@ -1,0 +1,60 @@
+\documentclass{article}
+
+% \csvautotabular{}基于 csv 文件快速创建表格
+\usepackage{csvsimple}
+
+% \csvautobooktabular{}基于 csv 文件快速创建三线表格
+\usepackage{booktabs} 
+
+%% \csvreader[属性设置]{csv文件名或文件路径}{定义数据列名}{需要导入的数据列名}，属性设置包括：
+% tabular: 定义列类型。列类型个数应与需要导入的列数一致
+% table head: 定义表头，包括标题行的顶线、列名及底线
+% late after line: 定义行分隔线
+
+\begin{document}
+
+%% 读取csv文件
+\begin{table}
+    \centering
+    \caption{A table imported from csv file}
+    \label{label of table1}
+    \csvautotabular{grade.csv}
+\end{table}
+
+\begin{table}
+    \centering
+    \caption{A table imported from csv file}
+    \label{label of table2}
+    \csvautobooktabular{grade.csv}
+\end{table}
+
+%% 设置表格属性
+\begin{table}
+    \centering
+    \caption{A table imported from csv file}
+    \label{label of table3}
+    \csvreader[
+        tabular = |r|l|c|c|c|, % 定义列类型，个数与需要导入的列数一致
+        table head = \hline & Person & Matr.~No. & Gender & Grade \\ \hline, % 定义表头，包括标题行的顶线、列名和底线
+        late after line = \\ \hline % 定义行分隔线
+        ]
+        {grade.csv} % csv 文件名
+        {name=\name, givenname=\firstname, matriculation=\matnumber, gender=\gender, grade=\grade} % 定义数据列名
+        {\thecsvrow & \firstname~\name & \matnumber & \gender & \grade}
+\end{table}
+
+\begin{table}
+    \centering
+    \caption{A table imported from csv file}
+    \label{label of table3}
+    \csvreader[
+        tabular = |r|l|c|, % 定义列类型，个数与需要导入的列数一致
+        table head = \hline & Person & Matr.~No. \\ \hline, % 定义表头，包括标题行的顶线、列名和底线
+        late after line = \\ \hline % 定义行分隔线
+        ]
+        {grade.csv} % csv 文件名
+        {name=\name, givenname=\firstname, matriculation=\matnumber, gender=\gender, grade=\grade} % 定义数据列名
+        {\thecsvrow & \firstname~\name & \matnumber}
+\end{table}
+
+\end{document}
