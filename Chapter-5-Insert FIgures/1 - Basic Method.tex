@@ -2,7 +2,35 @@
 \usepackage{graphicx}
 \usepackage{caption}
 
+\usepackage{xcolor}
+\usepackage[export]{adjustbox} % 设置图片边框和颜色
+
+%% 标题样式调整指令：浮动体的自动计数器名称包括 \thefigure, \thesubfigure, \the table 或 \thesubtable; 计数器样式包括 \alpha{}, \Alph{}, \Roman{}, \arabic{}等
+% \renewcommand{\figurename}{Fig} % 设置新的图片标题头部
+% \renewcommand{\tablename}{Table} % 设置新的表格标题头部
+% \renewcommand{\thefigure}{\Alph{figure}} % 设置图片编号样式为大写字母
+% \renewcommand{\thetable}{\alph{table}} % 设置图片编号样式为大写字母
+
+%% 调整编号分隔符 \captionsetup[浮动体类型]{设置labelsep选项}
+% colon: 默认值，英文冒号':'      period: 英文句号'.'             none: 无编号分隔符
+% space: 一个空格                quad: 一个字符'M'大小的空格      newline: 换行
+\usepackage{caption}
+\captionsetup[figure]{labelsep=newline}
+
+%% 修改图表目录名称
+\renewcommand{\listfigurename}{Figures}
+\renewcommand{\listtablename}{Tables}
+
+
 \begin{document}
+
+%% 目录样式调整
+% \thispagestyle{empty}   % 取消页码编号
+% \listoffigures          % 创建图片目录
+% \listoftables           % 创建表格目录
+% \newpage                % 插入新页
+% \pagenumbering{arabic}  % 设置页码样式为小写阿拉伯数字
+
 % 插入浮动图片
 \begin{figure}
     \centering
@@ -11,11 +39,8 @@
     \label{fig:1}
 \end{figure}
 
-\newpage
+\vfill
 % minipage 环境插入非浮动图片
-Figure \ref{fig:2} shows a single-person sailboat.
-
-\vspace{20pt}
 \begin{minipage}{\linewidth}
     \centering
     \includegraphics[width = 0.6\linewidth]{Figures/fig2.jpg}
@@ -23,21 +48,36 @@ Figure \ref{fig:2} shows a single-person sailboat.
     \label{fig:2}
 \end{minipage}
 
-\vspace{20pt}
-According to the picture, we know ...
+Figure \ref{fig:2} shows a single-person sailboat. According to the picture, we know ...
 
 \newpage
 % center 环境插入非浮动图片
 Figure \ref{fig:3} shows an athlete.
-
-\vspace{20pt}
 \begin{center}
     \centering
-    \includegraphics[width = 0.8\linewidth]{Figures/fig3.jpg}
+    \includegraphics[width = 0.7\linewidth]{Figures/fig3.jpg}
     \captionof{figure}{An athlete.}
     \label{fig:3}
 \end{center}
-\vspace{20pt}
+
 According to the picture, we know ...
+
+% 调整图片样式--width: 设置图片宽度  height: 设置图片高度  scale: 设置图片的缩放倍数  angle: 设置图片的逆时针旋转角度，负值表示顺时针旋转
+This is a beautiful figure, the width of the figure is half of the document.
+\begin{figure}[!hb]
+    \centering
+    \includegraphics[scale=0.1, angle=90]{Figures/fig3.jpg}
+\end{figure}
+
+% 增加边框
+This is a beautiful figure with a width of 0.8 times that of the document, centered, positioned automatically, and with an added red border with a line thickness of 0.5mm.
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.8\linewidth, cframe=red 0.5mm]{Figures/fig4.jpg}
+    \caption{There is a worker.}
+    \label{worker}
+\end{figure}
+
+
 
 \end{document}
