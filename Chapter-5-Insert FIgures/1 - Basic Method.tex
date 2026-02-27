@@ -1,0 +1,43 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage{caption}
+
+\begin{document}
+% 插入浮动图片
+\begin{figure}
+    \centering
+    \includegraphics[width = 0.8\linewidth]{Figures/fig1.jpg}
+    \caption{There is a baby.}
+    \label{fig:1}
+\end{figure}
+
+\newpage
+% minipage 环境插入非浮动图片
+Figure \ref{fig:2} shows a single-person sailboat.
+
+\vspace{20pt}
+\begin{minipage}{\linewidth}
+    \centering
+    \includegraphics[width = 0.6\linewidth]{Figures/fig2.jpg}
+    \captionof{figure}{A single-person sailboat.}
+    \label{fig:2}
+\end{minipage}
+
+\vspace{20pt}
+According to the picture, we know ...
+
+\newpage
+% center 环境插入非浮动图片
+Figure \ref{fig:3} shows an athlete.
+
+\vspace{20pt}
+\begin{center}
+    \centering
+    \includegraphics[width = 0.8\linewidth]{Figures/fig3.jpg}
+    \captionof{figure}{An athlete.}
+    \label{fig:3}
+\end{center}
+\vspace{20pt}
+According to the picture, we know ...
+
+\end{document}
