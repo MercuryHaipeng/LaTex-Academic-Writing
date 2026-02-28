@@ -9,9 +9,9 @@
 \section{Brief Introduction}
 Figure \ref{fig:fig1} contains sub-figure \ref{subfig:subfig1}, sub-figure \ref{subfig:subfig2} and sub-figure \ref{subfig:subfig3}.
 
-\begin{figure}[!h]
+\begin{figure}[!htbp]
     \centering
-    % 插入第一张子图，同时设置子图环境环境宽度占页面宽度的比例
+    % 插入第一张子图，同时设置子图环境宽度占页面宽度的比例
     \begin{subfigure}{0.3\linewidth} 
         \centering
         % 设置图片宽度占当前子图环境宽度的比例
@@ -39,13 +39,13 @@ Figure \ref{fig:fig1} contains sub-figure \ref{subfig:subfig1}, sub-figure \ref{
 
 
 %% ===================================================== %% 
-\section{Adjust the Inter-subfigure Spacing}
+\section{Adjust the Subfigures Spacing}
 % - \hfill: 对位于相同行的子图实现多个子图横向等距分布
 % - \hspace{横向距离}: 定制横向图片距离。负值可产生图片重叠的效果
 % - \quad, \qquad: 设置不同预设长度的横向图片距离
 % - \vfill: 实现图片纵向等距分布
-The horizontal sapce among Sub-figures in figure \ref{fig:fig2} is controlled by $\backslash$\textit{hfill}.
-\begin{figure}[!h]
+The horizontal space among Sub-figures in figure \ref{fig:fig2} is controlled by $\backslash$\textit{hfill}.
+\begin{figure}[!htbp]
     \centering
     % 插入第一张子图，同时设置子图环境环境宽度占页面宽度的比例
     \begin{subfigure}{0.3\linewidth} 
@@ -72,8 +72,8 @@ The horizontal sapce among Sub-figures in figure \ref{fig:fig2} is controlled by
 \label{fig:fig2}
 \end{figure}
 
-The horizontal sapce among Sub-figures in figure \ref{fig:fig3} is controlled by $\backslash$\textit{space}.
-\begin{figure}[!h]
+The horizontal space among Sub-figures in figure \ref{fig:fig3} is controlled by $\backslash$\textit{space}.
+\begin{figure}[!http]
     \centering
     % 插入第一张子图，同时设置子图环境环境宽度占页面宽度的比例
     \begin{subfigure}{0.3\linewidth} 
@@ -97,23 +97,23 @@ The horizontal sapce among Sub-figures in figure \ref{fig:fig3} is controlled by
 \label{fig:fig3}
 \end{figure}
 
-\begin{figure}[!h]
+\begin{figure}[!http]
     \centering
     % 插入第一张子图，同时设置子图环境环境宽度占页面宽度的比例
-    \begin{subfigure}{0.3\linewidth} 
+    \begin{subfigure}{0.5\linewidth} 
         \centering
         % 设置图片宽度占当前子图环境宽度的比例
         \includegraphics[width=0.6\linewidth]{Figures/fig1.jpg}
     \end{subfigure}
     \vfill
     % 插入第二张子图
-    \begin{subfigure}{0.3\linewidth}
+    \begin{subfigure}{0.5\linewidth}
         \centering
         \includegraphics[width=0.6\linewidth]{Figures/fig2.jpg}
     \end{subfigure}
     \vfill
     % 插入第三张子图
-    \begin{subfigure}{0.3\linewidth}
+    \begin{subfigure}{0.5\linewidth}
         \centering
         \includegraphics[width=0.6\linewidth]{Figures/fig3.jpg}
     \end{subfigure}
@@ -141,12 +141,12 @@ The two figures are displayed side by side.
 \end{figure}
 
 \newpage
-% 设置图片文字环绕
+% 设置图片文字环绕，需要宏包\usepackage{wrapfig}
 There is a loverly child who is playing in the living room.
 \begin{wrapfigure}{r}{8cm}
     \centering
-    \includegraphics[width=0.4\textwidth]{Figures/fig1.jpg}
-    % \includegraphics[width=0.4\linewidth]{Figures/fig1.jpg}
+    \includegraphics[width=0.4\textwidth]{Figures/fig1.jpg} % 图片宽度固定不变
+    % \includegraphics[width=0.4\linewidth]{Figures/fig1.jpg} % 图片宽度随环境变化自动缩放
     \caption{A lovely child.}
     \label{fig:child}
 \end{wrapfigure}
