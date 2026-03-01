@@ -46,6 +46,37 @@
 \vspace{2cm}
 
 %% ======= 网络张量图的优化代码 ===================== %% 
+% 提升可读性和复用性
+\begin{tikzpicture}[
+    % 定义节点样式：复用性更强
+    mynode/.style={circle, line width=0.4mm, draw=black, fill=red!45, inner sep=0pt, minimum size=0.4cm},
+    myline/.style={line width=0.4mm},
+    mylabel/.style={font=\small, inner sep=0pt}
+]
+    % 简化后的节点写法
+    \node [mynode] (w) at (0, 0) {};
+    \node [mylabel] at (0, 0.5) {$\boldsymbol{W}$};
+    \node [mynode] (g) at (1.5, 0) {};
+    \node [mylabel] at (1.5, 0.5) {$\boldsymbol{G}$};
+    \node [mynode] (v) at (3, 0) {};
+    \node [mylabel] at (3, 0.5) {$\boldsymbol{V}$};
+
+    % 简化后的连线写法
+    \path [myline] (w) edge (g);
+    \node [mylabel] at (0.75, 0.25) {$R$};
+    \path [myline] (g) edge (v);
+    \node [mylabel] at (2.25, 0.25) {$K$};
+
+    \draw [myline] (w) -- (0, -0.8);
+    \node [mylabel] at (-0.25, -0.4) {$N$};
+    \draw [myline] (g) -- (1.5, -0.8);
+    \node [mylabel] at (1.25, -0.4) {$N$};
+    \draw [myline] (v) -- (3, -0.8);
+    \node [mylabel] at (2.75, -0.4) {$d$};
+\end{tikzpicture}
+
+\vspace{2cm}
+
 % 减少重复代码、提升可维护性、增强扩展性、优化排版细节
 \begin{tikzpicture}[
     % 以下代码也可以放在导言区 \tikzset{}
@@ -64,7 +95,9 @@
     mylabel/.style={
         font=\small, % 替代单独的\small，样式更集中
         inner sep=0pt % 消除标注节点的默认留白
-        }
+        },
+    % scale: 缩放, xscale: 横向缩放, yscale: 纵向缩放
+    scale = 2
     ]
     % ========== 第一步：批量定义节点（减少重复坐标书写） ==========
     % 用\foreach循环批量创建核心节点，避免重复写\node
