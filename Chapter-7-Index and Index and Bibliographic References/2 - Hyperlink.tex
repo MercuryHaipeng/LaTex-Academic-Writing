@@ -1,0 +1,79 @@
+\documentclass{book}
+\usepackage{blindtext}
+
+\usepackage[hyphens]{url} % 允许网址在连字符"-"的位置自动换行
+\urlstyle{same} % 网址使用与正文相同的字体
+
+\usepackage{hyperref} % 创建超链接
+\hypersetup{
+    colorlinks=true, % 链接被着色, 默认是false, 黑色字体带有色边框
+    linkcolor=blue, % 内部(目录)链接显示为蓝色
+    filecolor=magenta, % 本地文件链接为洋红色
+    urlcolor=cyan % 网址链接为青色
+}
+
+%% BibLaTeX核心命令
+% authoryear: 作者-年份  numeric: 数字编号(BibTeX 默认风格)  alphabetic: 字母编号
+% apa: 美国心理学会  ieee: 电气电子工程师协会  gb7714-2015numeric: 国标 2015 版
+\usepackage[
+    backend=biber,    % 编译引擎（必须）
+    style=authoryear, % 作者-年份样式（关键）
+    natbib=true       % 可选：兼容natbib的\citet/\citep命令
+]{biblatex}
+\addbibresource{reference.bib} % 必须写.bib后缀
+
+\begin{document}
+\frontmatter
+\tableofcontents
+\clearpage
+\addcontentsline{toc}{chapter}{Foreword}
+{\huge{\bf Foreword}}
+This is foreword.
+\clearpage
+
+\mainmatter
+\chapter{First Chapter}
+This is chapter 1.
+\clearpage
+
+\section{First Section} \label{second}
+This is section 1.1.
+
+\section{Second Section}
+% 网址链接
+This is the website of open-source GitHub 
+repository: \href{https://github.com/MercuryHaipeng/LaTex-Academic-Writing}{LaTex-Academic-Writing} or go to the next url: \url{https://github.com/MercuryHaipeng/LaTex-Academic-Writing}.
+
+% 本地文件链接，注意链接的文件路径为相对当前LaTex 编译输出 PDF 文件的路径
+This is the text of open-source local repository: \href{run:../Chinese-Document.pdf}{LaTeX-Chinese}. 
+
+
+\section{Reference Management}
+%% LaTeX中有两种管理参考文献的方法：一是在 .tex 文档中嵌入参考文献；另一种是使用 BibTeX 进行文献管理。
+%% BibTeX文件对不同类型文献的分类如下：
+% @article: 期刊论文  @book: 书籍  @inbook: 书中的一部分或某一章节
+% @inproceedings/@conference: 会议论文  @mastersthesis/@phdthesis: 硕士/博士论文  
+% @proceedings: 会议论文集  @techreport: 技术报告  @misc: 其他类型的文献
+%% 丰富的引用命令：
+% - \autocite{key}（上下文自适应引用）
+% - \textcite{key}（正文式引用，如 “张三 et al., 2020”）
+% - \parencite{key}（括号引用，如 “(张三，2020)”）
+Some examples for showing how to use \texttt{the bibliography} enviroment:
+% 传统的 nabib 引用命令
+\begin{itemize}
+    \item Book reference sample: The \LaTeX\ companion book \cite{latexcompanion}.
+    \item Paper reference sample: On the electrodynamics of moving bodies \citet{einstein}.
+    \item Open-source reference sample: Knuth: Computers and Typesetting \citep{knuthwebsite}
+\end{itemize}
+
+% BibLaTeX 引用命令
+\begin{itemize}
+    \item Book reference sample: The \LaTeX\ companion book \autocite{latexcompanion}.
+    \item Paper reference sample: On the electrodynamics of moving bodies \textcite{einstein}.
+    \item Open-source reference sample: Knuth: Computers and Typesetting \parencite{knuthwebsite}
+\end{itemize}
+
+% 插入参考文献
+\printbibliography
+
+\end{document}

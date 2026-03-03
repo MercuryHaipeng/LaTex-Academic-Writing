@@ -49,7 +49,7 @@
 % 提升可读性和复用性
 \begin{tikzpicture}[
     % 定义节点样式：复用性更强
-    mynode/.style={circle, line width=0.4mm, draw=black, fill=red!45, inner sep=0pt, minimum size=0.4cm},
+    mynode/.style={circle, line width=0.4mm, draw=black, fill=green!45, inner sep=0pt, minimum size=0.4cm},
     myline/.style={line width=0.4mm},
     mylabel/.style={font=\small, inner sep=0pt}
 ]
@@ -97,7 +97,7 @@
         inner sep=0pt % 消除标注节点的默认留白
         },
     % scale: 缩放, xscale: 横向缩放, yscale: 纵向缩放
-    scale = 2
+    scale = 1.5
     ]
     % ========== 第一步：批量定义节点（减少重复坐标书写） ==========
     % 用\foreach循环批量创建核心节点，避免重复写\node

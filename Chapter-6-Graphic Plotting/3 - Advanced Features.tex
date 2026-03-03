@@ -15,11 +15,15 @@
     % 绘制矩形、圆形和曲线
     \draw [red] (0, 0) rectangle (1.5, 1);
     \draw [blue, ultra thick] (3, 0.5) circle [radius=0.5];
+    \node [circle, draw=black, inner sep=0pt, minimum size=0.1cm] (v) at (6, 0) {};
+    % (6, 0)是圆弧起点坐标，根据起点，半径和起始角度计算圆心绘制圆弧
     \draw [green] (6, 0) arc [radius=1.5, start angle=45, end angle=100];
     % 绘制圆角的坐标系
     \draw [<->, rounded corners, thick, purple] (0, -2) -- (0, -4) -- (3, -4);
     % 绘制过渡曲线
     \draw [<-, thick] (5, -2) -- (5, -3.5);
+    % to: 连接两个点的路径指令，可加参数画曲线 / 弧线; 
+    % [out, in] - out：起点的「出射角度」; - in：终点的「入射角度」
     \draw [thick, red] (5, -3.5) to [out=270, in=180] (5.5, -4);
     \draw [->, thick] (5.5, -4) -- (8, -4);
     % 绘制 S 曲线
@@ -28,11 +32,11 @@
 
 \newpage
 %% 根据函数绘制曲线
-% 阶乘函数factorial(\x), 平方根sqrt(\x), 幂函数pow(\x,y), 指数函数exp(\x), 对数函数ln(\x), log10(\x), log2(\x), abs(\x), 取余函数mod(\x,y), 圆整函数round(\x), floor(\x), ceil(\x), sin(\x), cos(\x), tan(\x)等。(\x r)
+% 阶乘函数factorial(\x), 平方根sqrt(\x), 幂函数pow(\x,y), 指数函数exp(\x), 对数函数ln(\x), log10(\x), log2(\x), abs(\x), 取余函数mod(\x,y), 圆整函数round(\x), floor(\x), ceil(\x), sin(\x), cos(\x), tan(\x)等。
 % 常数：e=2.718281828, pi=3.141592654
 \begin{tikzpicture}[xscale=0.01, yscale=1]
     \draw [<->] (0, 1) -- (0, 0) -- (370, 0);
-    \draw [green, thick, domain=0:360] plot (\x, {sin(\x)}); % domain表示自变量取值范围，默认角度; 数学表达式需要加{}
+    \draw [green, thick, domain=0:360] plot (\x, {sin(\x)}); % domain表示自变量取值范围，默认角度; (\x r)表示弧度。数学表达式需要加{}
 \end{tikzpicture}
 
 % 组合基本函数
@@ -64,7 +68,7 @@
     \node [below right] at (3, 0) {$x$};
     \node [left] at (0, 2) {$y$};
     % 标注点 (1, 1)
-    \node [below right=2, red] at (1, 1) {below right};
+    \node [below right=1, red] at (1, 1) {below right}; % 参数值 1 表示相对距离
     \node [above left, green] at (1, 1) {above left};
     \node [below left, purple] at (1, 1) {below left};
     \node [above right, magenta] at (1, 1) {above right};
@@ -94,9 +98,7 @@
     \filldraw [fill=green!20!white, draw=green!40!black] (5.2/2, 0) rectangle (6.0/2, 2.4/2);
     \draw [step=0.4/2, very thin, color=gray] (5.2/2, 0) grid (6.0/2, 2.4/2);
     \draw (5.6/2, -0.3) node {{\color{red} \scriptsize{$W\in\mathbb{R}^{m \times r}$}}};
-
     \draw (6.8/2, 1.2/2) node {{\color{black}\large{$\times$}}};
-
     \draw [very thick] (7.6/2, 0.8/2) rectangle (11.2/2, 1.6/2);
     \filldraw [fill=green!20!white, draw=green!40!black] (7.6/2, 0.8/2) rectangle (11.2/2, 1.6/2);
     \draw [step=0.4/2, very thin, color=gray] (7.6/2, 0.8/2) grid (11.2/2, 1.6/2);
