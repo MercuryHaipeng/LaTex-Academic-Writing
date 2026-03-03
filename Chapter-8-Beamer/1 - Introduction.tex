@@ -1,0 +1,84 @@
+\documentclass[aspectratio=169]{beamer} % 设置长宽比，默认4:3
+\usefonttheme{professionalfonts} % 使用专业字体
+
+\title{A Simple Beamer Example} % 标题
+\subtitle{An Introduction to Beamer} % 副标题
+\author{Author's Name} % 作者
+\institute{Author's Institute} % 机构单位
+\date{\today} % 日期
+
+\begin{document}
+\titlepage % 标题底部对齐
+\frame{\titlepage} % 生成标题页, 垂直居中对齐
+
+% 也可以直接用\frame{...}, 默认垂直居中c, t为顶部对齐, b为底部对齐
+\begin{frame}[c] 
+    \frametitle{Parent function}
+    \framesubtitle{A short list}
+    Please check out the following parent function list.
+    \begin{enumerate}
+        \item $y=x$
+        \item $y=|x|$
+        \item $y=x^{2}$
+        \item $y=x^{3}$
+        \item $y=x^{b}$
+    \end{enumerate}
+\end{frame}
+
+% 利用\pause达到动态效果
+\begin{frame} 
+    \frametitle{Parent function - for pause}
+    \framesubtitle{A short list}
+    Please check out the following parent function list.
+    \begin{enumerate}
+        \item $y=x$
+        \pause
+        \item $y=|x|$
+        \pause
+        \item $y=x^{2}$
+        \pause
+        \item $y=x^{3}$
+        \pause
+        \item $y=x^{b}$
+    \end{enumerate}
+\end{frame}
+
+% 使用\item<A-B>对应起始帧和终止帧
+\begin{frame} 
+    \frametitle{Parent function - for item<A-B>}
+    \framesubtitle{A short list}
+    Please check out the following parent function list.
+    \begin{enumerate}
+        \item<1-4> $y=x$
+        \item<2-4> $y=|x|$
+        \item<3-4> $y=x^{2}$
+        \item<4-> $y=x^{3}$
+        \item<4-> $y=x^{b}$
+    \end{enumerate}
+\end{frame}
+
+% 使用\item<A, B, C>对应起始帧和终止帧
+\begin{frame} 
+    \frametitle{Parent function - for item<A, B, C>}
+    \framesubtitle{A short list}
+    Please check out the following parent function list.
+    \begin{enumerate}
+        \item $y=x$
+        \item $y=|x|$
+        \item<2, 3, 4> $y=x^{2}$
+        \item<3, 4> $y=x^{3}$
+        \item<4> $y=x^{b}$
+    \end{enumerate}
+\end{frame}
+
+% 其他页面控制指令
+\begin{frame}
+    \frametitle{Parent function - for alert, only and uncover}
+    \framesubtitle{A short list}
+    Please check out the following \alert<2->{parent function} list.
+
+    Please check out the following \only<1>{parent function} list.
+
+    Please check out the following \uncover<1>{parent function} list.
+\end{frame}
+\end{document}

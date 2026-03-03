@@ -1,0 +1,111 @@
+\documentclass{beamer}
+\usefonttheme{professionalfonts}
+
+\usepackage{booktabs} % 制作三线表格
+
+\usepackage{verbatim} % 支持原始文本格式显示, 需配合fragile参数使用
+
+\usepackage{listings} % 代码高亮宏包
+\usepackage{xcolor}   % 颜色支持
+% 自定义代码样式
+\lstset{
+  basicstyle=\small\ttfamily, % 字体：等宽、小号
+  keywordstyle=\color{blue},  % 关键字蓝色
+  commentstyle=\color{gray},  % 注释灰色
+  numbers=left,               % 行号在左侧
+  numberstyle=\tiny,          % 行号小号
+  breaklines=true,            % 自动换行
+  language=Python             % 代码语言为Python, 也可以写在环境参数中 
+}
+
+\begin{document}
+\begin{frame}
+    {Table of Contents}
+    \tableofcontents
+    % \tableofcontents[hideallsubsections] % 隐藏子目录
+    % \tableofcontents[pausesections] % 每个部分暂停
+\end{frame}
+
+\section{Intro to Beamer}
+\subsection{About Beamer}
+\subsection[Basic Structure]{Basic Structure}
+\subsection{How to Compile}
+
+
+\section{Overlaying Concepts}
+\subsection{Specifications}
+\subsection[Examples]{Examples: Lists, Graphics, Tables}
+\begin{frame}
+    \begin{table}
+        \begin{tabular}{l|ccc}
+            \toprule
+            & \textbf{head3} & \textbf{head4} & \textbf{head5} \\
+            \midrule
+            \textbf{header1} & cell1 & cell2 & cell3 \\ 
+            \midrule
+            \textbf{header2} & cell4 & cell5 & cell6 \\ 
+            \bottomrule
+        \end{tabular}
+    \end{table}
+\end{frame}
+
+\begin{frame}
+    \begin{table}[htbp]
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Code Structure} & \textbf{Component} & \textbf{Others} \\
+            \hline
+            \uncover<1->{preamble} & \uncover<2->{figures} & \uncover<3->{title} \\ 
+            \uncover<1->{body} & \uncover<2->{tables} & \uncover<3->{footline} \\ 
+            & \uncover<2->{equations} & \uncover<3->{list} \\
+            & \uncover<2->{normal texts} & \uncover<3->{block} \\
+            \hline
+        \end{tabular}
+    \end{table}
+\end{frame}
+
+
+\section[Sparkle]{Adding that Sparkle}
+\subsection{Sections}
+% 分栏显示幻灯片
+\begin{frame}
+    \frametitle{Example}
+    \textbf{Here is a simple example:}
+    \vspace{2cm}
+    \begin{columns}
+        \column{0.5\textwidth}
+        The first column for showing the command column.
+        \column{0.5\textwidth}
+        The second column for showing the command column.
+    \end{columns}
+\end{frame}
+
+\subsection{Themes}
+% fragile解决含特殊命令的帧编译报错，跳过预处理，按原生 LaTeX 方式处理
+\begin{frame}[fragile]
+    \textbf{Python Code: (verbatim enviroment)}
+    \begin{verbatim}
+        import numpy as np
+        b = 5
+        y = np.zeros(100)
+        for x in range(1, 101):
+            y[x] = x ** b
+    \end{verbatim}
+    \textbf{Python Code: (lstlisting enviroment)}
+    \begin{lstlisting}
+        import numpy as np
+        b = 5
+        y = np.zeros(100)
+        for x in range(1, 101):
+            y[x] = x ** b
+    \end{lstlisting}
+\end{frame}
+
+
+
+
+\section*{Reference}
+\begin{frame}
+\end{frame}
+
+\end{document}
