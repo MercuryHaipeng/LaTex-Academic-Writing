@@ -1,0 +1,71 @@
+\documentclass{beamer}
+
+%% Beamer 主题样式
+% Berlin: 柏林主题样式，默认为蓝色调
+% Copenhagen: 哥本哈根主题样式，默认为蓝色调
+% CambridgeUS: 英国剑桥主题样式，默认为红色调
+% Berkeley: 伯克利主题样式，默认为蓝色调
+% Singapore: 新加坡主题样式，默认为蓝色调
+% Warsaw: 华沙主题样式，默认为蓝色调
+\usetheme{CambridgeUS}
+
+% \PassOptionsToPackage{right}{beamerouterthemesidebar} % 侧边栏右侧显示
+% \usetheme{Berkeley}
+
+%% Beamer 颜色主题
+% beetle: 甲壳虫颜色主题，适合深色背景
+% beaver: 海狸颜色主题，适合浅色背景
+% orchid: 兰花颜色主题，适合浅色背景
+% whale: 鲸鱼颜色主题，适合深色背景
+% dolphin: 海豚颜色主题，适合浅色背景
+% 更多组合样式见：https://hartwork.org/beamer-theme-matrix/
+\usecolortheme{dolphin}
+
+%% 字体宏包: serif, avant, bookman, chancery, charter, euler, helvet, mathtime, mathptm, mathptmx, newcent, palatino, pifont, utopia 等.
+\usepackage{palatino} % 使用palatino字体, 需配合\usefonttheme{professionalfonts}使用, 加粗无效
+\usefonttheme{professionalfonts} % 确保自定义字体不被主题覆盖
+\usefonttheme{serif} % Beamer 中切换标题/元素为衬线字体
+
+% 表格字体设置
+\usepackage{booktabs}
+\usepackage{caption}
+\captionsetup{font=large, labelfont=Large} 
+
+\usepackage{graphicx}
+\title{A Simple Beamer Exapmle}
+\author{Author's Name}
+\institute{Author's Institute}
+% \logo 命令添加的 logo 会在每一页幻灯片中都显示
+\logo{\includegraphics[width=2cm]{logo-lion.pdf}}
+% \titlegraphic 命令添加的 logo 只会在标题页显示 
+\titlegraphic{\includegraphics[width=3cm]{logo-lion.jpg}}
+
+\begin{document}
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}
+    This is a simple example for the CambridgeUS theme.
+\end{frame}
+
+\begin{frame}
+    This is a simple example for using \alert{palatino} font.
+\end{frame}
+
+\begin{frame}
+    \begin{table}
+        \caption{A simple table.}
+        \begin{tabular}{l|ccc}
+            \toprule
+            & \textbf{head3} & \textbf{head4} & \textbf{head5} \\
+            \midrule
+            \textbf{header1} & cell1 & cell2 & cell3 \\ 
+            \midrule
+            \textbf{header2} & cell4 & cell5 & cell6 \\ 
+            \bottomrule
+        \end{tabular}
+    \end{table}
+\end{frame}
+
+\end{document}

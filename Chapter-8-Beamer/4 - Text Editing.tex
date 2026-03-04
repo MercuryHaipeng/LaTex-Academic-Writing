@@ -1,0 +1,61 @@
+\documentclass{beamer}
+\usefonttheme{professionalfonts}
+% \usetheme{Copenhagen}
+\usetheme{CambridgeUS}
+
+\begin{document}
+\begin{frame}
+    \begin{center}
+        \begin{minipage}{3.5cm}
+            \begin{block}{}
+                Our first text block.   
+            \end{block}
+        \end{minipage}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Freference Example}
+    If you have any interest in matrix computations, please referring to \cite{golub2013matrix, petersen2008the}.
+\end{frame}
+
+\begin{frame}[allowframebreaks] % 允许自动分页
+    \frametitle<presentation>{Further Reading}
+    \begin{thebibliography}{10}
+        \beamertemplatebookbibitems % 书籍类型的参考文献标志
+        \bibitem{golub2013matrix}
+        Gene H Golub and Charles F Van Loan.
+        \newblock {\em Matrix computations, volume 3}.
+        \newblock JHU Press, 2013.
+
+        \beamertemplatearticlebibitems % 文章类型的参考文献标志
+        \bibitem{petersen2008the}
+        Kaare Petersen and Michael Pedersen.
+        \newblock The matrix cookbook.
+        \newblock {\em Technical University of Denmark}, 7(15):510, 2008.
+
+        % 更多参考文献显示自动分页
+        \beamertemplatebookbibitems 
+        \bibitem{golub2013matrix}
+        Gene H Golub and Charles F Van Loan.
+        \newblock {\em Matrix computations, volume 3}.
+        \newblock JHU Press, 2013.
+        \beamertemplatearticlebibitems 
+        \bibitem{petersen2008the}
+        Kaare Petersen and Michael Pedersen.
+        \newblock The matrix cookbook.
+        \newblock {\em Technical University of Denmark}, 7(15):510, 2008.
+        \beamertemplatebookbibitems
+        \bibitem{golub2013matrix}
+        Gene H Golub and Charles F Van Loan.
+        \newblock {\em Matrix computations, volume 3}.
+        \newblock JHU Press, 2013.
+        \beamertemplatearticlebibitems 
+        \bibitem{petersen2008the}
+        Kaare Petersen and Michael Pedersen.
+        \newblock The matrix cookbook.
+        \newblock {\em Technical University of Denmark}, 7(15):510, 2008.
+    \end{thebibliography}
+\end{frame}
+
+\end{document}

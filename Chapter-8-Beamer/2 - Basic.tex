@@ -1,5 +1,6 @@
 \documentclass{beamer}
 \usefonttheme{professionalfonts}
+% \usetheme{Copenhagen} % 选择主题(用于突出显示)
 
 \usepackage{booktabs} % 制作三线表格
 
@@ -67,19 +68,6 @@
 
 \section[Sparkle]{Adding that Sparkle}
 \subsection{Sections}
-% 分栏显示幻灯片
-\begin{frame}
-    \frametitle{Example}
-    \textbf{Here is a simple example:}
-    \vspace{2cm}
-    \begin{columns}
-        \column{0.5\textwidth}
-        The first column for showing the command column.
-        \column{0.5\textwidth}
-        The second column for showing the command column.
-    \end{columns}
-\end{frame}
-
 \subsection{Themes}
 % fragile解决含特殊命令的帧编译报错，跳过预处理，按原生 LaTeX 方式处理
 \begin{frame}[fragile]
@@ -101,8 +89,35 @@
     \end{lstlisting}
 \end{frame}
 
+%% 文本排版
+% 分栏显示幻灯片
+\begin{frame}
+    \frametitle{Example}
+    \textbf{Here is a simple example:}
+    \vspace{2cm}
+    \begin{columns}
+        \column{0.5\textwidth}
+        The first column for showing the command column.
+        \column{0.5\textwidth}
+        The second column for showing the command column.
+    \end{columns}
+\end{frame}
 
-
+% 选择主题突出显示：block(常规方块), theorem(定理), lemma(引理), proof(证明), example(示例), alertblock(着重突出的方块)
+\begin{frame}
+    \frametitle{Example}
+    \textbf{Here are some simple exapmles:}
+    \vspace{2em}
+    \begin{block}{Block}
+        Beamer is a {\LaTeX} class for creating presentations.      
+    \end{block}
+    \begin{example}{Example block}
+        Beamer is a {\LaTeX} class for creating presentations. 
+    \end{example}
+    \begin{alertblock}{Alert block}
+        Beamer is a {\LaTeX} class for creating presentations. 
+    \end{alertblock}
+\end{frame}
 
 \section*{Reference}
 \begin{frame}
