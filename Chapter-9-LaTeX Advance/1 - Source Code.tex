@@ -1,0 +1,84 @@
+\documentclass[12pt]{article}
+
+\usepackage{listings}
+\usepackage{color}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour}, % 设置背景色为浅灰色 
+    commentstyle=\color{codegreen},     % 代码注释颜色为绿色
+    keywordstyle=\color{magenta},       % 代码关键字为品红色
+    numberstyle=\tiny\color{codegray},  % 行号字号tiny，颜色浅灰 
+    stringstyle=\color{codepurple},     % 字符串为紫色
+    basicstyle=\ttfamily\footnotesize,  % 等宽字体
+    breakatwhitespace=false,            % 换行不局限于空格
+    breaklines=true,                    % 自动换行                
+    captionpos=b,                       % 代码块标题位置在底部    
+    keepspaces=true,                    % 保留代码中的空格
+    numbers=left,                       % 行号显示在左侧
+    numbersep=5pt,                      % 行号与代码间距5pt
+    showspaces=false,                   % 不显示空格符号
+    showstringspaces=false,             % 不显示字符串内部的空格符号
+    showtabs=false,                     % 不显示制表符          
+    tabsize=2                           % 制表符为2个空格
+}
+\lstset{style=mystyle}
+
+\usepackage{algorithm} 
+\usepackage{algorithmic} 
+% \usepackage[linesnumbered, boxed]{algorithm2e} % 带行号和框线
+\usepackage{amsmath, amsfonts}
+
+
+\begin{document}
+\section{The First Section}
+% 使用 verbatim 环境显示代码
+Python code example:
+\begin{verbatim}
+    import numpy as np
+    x = np.random.rand(4)
+    print(x)
+\end{verbatim}
+
+\section{The Second Section}
+% 使用 listings 环境显示代码
+Python code example:
+\begin{lstlisting}[language=Python, caption=Example Python Code]
+    import numpy as np
+    x = np.random.rand(4)
+    print(x)
+\end{lstlisting}
+
+\section{Pseudocode for the Algorithm}
+%% 使用 algorithm 和 algorithmic 显示算法
+\begin{algorithm}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}} % Require -> Input
+\renewcommand{\algorithmicensure}{\textbf{Output:}} % Ensure -> Output
+\caption{Inner product of vectors}
+\begin{algorithmic}[1]
+    \REQUIRE $\boldsymbol{x}, \boldsymbol{y} \in \mathbb{R}^n$
+    \ENSURE $c$
+    \STATE $c=0$
+    \FOR{$i=1$ to $n$}
+        \STATE $c=c+x_i y_i$
+    \ENDFOR
+\end{algorithmic}
+\end{algorithm}
+
+%% 使用 algorithm2e 显示算法
+% \begin{algorithm}
+%     \SetKwInOut{Input}{Input}
+%     \SetKwInOut{Output}{Output}
+%     \caption{Inner product of vectors}
+%     \Input{$\boldsymbol{x}, \boldsymbol{y} \in \mathbb{R}^n$}
+%     \Output{$c$}
+%     $c=0$\;
+%     \For{$i=1$ to $n$}{
+%         $c=c+x_i y_i$\;
+%     }
+% \end{algorithm}
+
+
+\end{document}
