@@ -14,6 +14,7 @@
     {0em} % 间距
     {} % 前缀
     [\titlerule] % 后缀
+    
 \titleformat{\subsection}
     {\large\scshape\raggedright} % 格式
     {} % 标签
